@@ -3,7 +3,7 @@ type State =
     | "bracket"
     | "property";
 
-export function splitProperty(path: string) {
+export function parsePath(path: string) {
     const states: State[] = [];
     const chars = path.trim().split(/\s*/);
 
@@ -109,7 +109,7 @@ export function splitProperty(path: string) {
 }
 
 export function getProperty(target: Record<string, any>, path: string, defaultValue?: unknown) {
-    const props = splitProperty(path);
+    const props = parsePath(path);
 
     let obj = target;
     for (const prop of props) {
@@ -122,7 +122,7 @@ export function getProperty(target: Record<string, any>, path: string, defaultVa
 }
 
 export function setProperty(target: Record<string, any>, path: string, value: unknown) {
-    const props = splitProperty(path);
+    const props = parsePath(path);
     if (!props.length) {
         return;
     }
@@ -137,7 +137,7 @@ export function setProperty(target: Record<string, any>, path: string, value: un
 }
 
 export function hasProperty(target: Record<string, any>, path: string) {
-    const props = splitProperty(path);
+    const props = parsePath(path);
 
     let obj = target;
     for (let i = 0; i < props.length; i++) {
@@ -152,7 +152,7 @@ export function hasProperty(target: Record<string, any>, path: string) {
 }
 
 export function deleteProperty(target: Record<string, any>, path: string) {
-    const props = splitProperty(path);
+    const props = parsePath(path);
 
     let obj = target;
     for (let i = 0; i < props.length; i++) {
