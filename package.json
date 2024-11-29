@@ -3,7 +3,7 @@
   "type": "module",
   "version": "0.0.1",
   "packageManager": "pnpm@9.5.0",
-  "description": "",
+  "description": "Operate objects via dot path",
   "author": "KazariEX",
   "license": "MIT",
   "repository": "KazariEX/propathy",
@@ -26,6 +26,7 @@
   "scripts": {
     "build": "tsup-node",
     "dev": "tsup-node --watch",
+    "prepack": "pnpm run build",
     "release": "bumpp --no-push -c \"release: v%s\"",
     "test": "vitest"
   },
