@@ -153,9 +153,6 @@ export function hasProperty(target: Record<string, any>, path: string) {
 
 export function deleteProperty(target: Record<string, any>, path: string) {
     const props = splitProperty(path);
-    if (!props.length) {
-        return false;
-    }
 
     let obj = target;
     for (let i = 0; i < props.length; i++) {
@@ -165,8 +162,8 @@ export function deleteProperty(target: Record<string, any>, path: string) {
                 return delete obj[prop];
             }
             obj = obj[prop];
-            continue;
         }
-        return false;
+        else break;
     }
+    return false;
 }
