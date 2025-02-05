@@ -2,7 +2,7 @@
   "name": "propathy",
   "type": "module",
   "version": "0.1.0",
-  "packageManager": "pnpm@9.5.0",
+  "packageManager": "pnpm@10.2.0",
   "description": "Operate objects via dot path",
   "author": "KazariEX",
   "license": "MIT",
@@ -11,13 +11,9 @@
     "property"
   ],
   "exports": {
-    ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.js",
-      "require": "./dist/index.cjs"
-    }
+    ".": "./dist/index.js"
   },
-  "main": "./dist/index.cjs",
+  "main": "./dist/index.js",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "files": [
@@ -31,11 +27,11 @@
     "test": "vitest"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^3.11.2",
-    "@zinkawaii/eslint-config": "^0.1.8",
-    "bumpp": "^9.8.1",
-    "eslint": "^9.15.0",
-    "tsup": "^8.3.5",
-    "vitest": "^2.1.6"
+    "@antfu/eslint-config": "^4.1.1",
+    "@zinkawaii/eslint-config": "^0.1.10",
+    "bumpp": "^10.0.1",
+    "eslint": "^9.19.0",
+    "tsup": "^8.3.6",
+    "vitest": "^3.0.5"
   }
 }
