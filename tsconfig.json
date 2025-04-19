@@ -1,14 +1,5 @@
 {
-  "compilerOptions": {
-    "lib": [
-      "ESNext"
-    ],
-    "module": "ESNext",
-    "moduleResolution": "Bundler",
-    "target": "ESNext",
-    "allowJs": true,
-    "strict": true
-  },
+  "extends": "@zinkawaii/tsconfig/tsconfig.json",
   "include": [
     "src/**/*.ts"
   ]
