@@ -66,7 +66,7 @@ describe("set", () => {
         const value = "qux";
         setProperty(obj, path, value);
         expect(JSON.stringify(obj)).toBe(
-            `{"foo":{"bar":[{"baz":"qux"}]}}`
+            `{"foo":{"bar":[{"baz":"qux"}]}}`,
         );
     });
 
@@ -76,7 +76,7 @@ describe("set", () => {
         const value = "qux";
         setProperty(obj, path, value);
         expect(JSON.stringify(obj)).toBe(
-            `{"foo":{"bar":[{"baz":"qux"}]}}`
+            `{"foo":{"bar":[{"baz":"qux"}]}}`,
         );
     });
 });
@@ -101,7 +101,7 @@ describe("delete", () => {
         const path = "foo.bar[0].baz";
         expect(deleteProperty(obj, path)).toBeTruthy();
         expect(JSON.stringify(obj)).toBe(
-            `{"foo":{"bar":[{}]}}`
+            `{"foo":{"bar":[{}]}}`,
         );
     });
 
@@ -110,7 +110,7 @@ describe("delete", () => {
         const path = "foo.bar[1]";
         expect(deleteProperty(obj, path)).toBeFalsy();
         expect(JSON.stringify(obj)).toBe(
-            `{"foo":{"bar":[{"baz":"qux"}]}}`
+            `{"foo":{"bar":[{"baz":"qux"}]}}`,
         );
     });
 });
