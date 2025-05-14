@@ -113,8 +113,10 @@ export function getProperty(target: Record<string, any>, path: string, defaultVa
 
     let obj = target;
     for (const prop of props) {
-        obj = obj[prop];
-        if (!obj) {
+        if (prop in obj) {
+            obj = obj[prop];
+        }
+        else {
             return defaultValue;
         }
     }
